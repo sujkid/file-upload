@@ -1,11 +1,11 @@
 'use strict';
 
-const onUploadFileSuccess = (/*data*/) => {
-  // $('.bookname').val('');
-  // $('.bookdesc').val('');
+const onUploadFileSuccess = (data) => {
+  console.log(data);
 };
 
-const onUploadFileFailure = (/*error*/) => {
+const onUploadFileFailure = (error) => {
+  console.log(error);
 };
 
 module.exports = {

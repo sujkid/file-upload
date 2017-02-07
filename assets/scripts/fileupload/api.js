@@ -2,6 +2,7 @@
 
 const config = require('../config.js');
 
+// api call to POST data to aws
 const uploadFile = (data) =>
 $.ajax({
   url: config.apiOrigins.production + '/uploads',
