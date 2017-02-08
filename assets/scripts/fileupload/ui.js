@@ -1,7 +1,7 @@
 'use strict';
 
 const onUploadFileSuccess = (data) => {
-  console.log(data);
+  $('#file-upload-success-modal').modal('show');
 };
 
 const onUploadFileFailure = (error) => {

@@ -2,7 +2,7 @@
 <html>
 
   <head>
-    <title>Example</title>
+    <title>File Upload</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Do not add `link` tags unless you know what you are doing -->
@@ -16,7 +16,7 @@
   <body class="container-fluid">
     <form id="multipart-form-data" method="post" enctype="multipart/form-data">
       <fieldset>
-        <legend>enctype="multipart/form-data"</legend>
+        <legend>File Uploader</legend>
         <label>
             Title
             <input type="text" name="image[title]">
@@ -32,6 +32,89 @@
         <input type="submit" name="submit" value="Upload">
       </fieldset>
     </form>
+
+    <hr>
+
+    <div class="modal fade" id="form-entry-error-modal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"
+                    aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">The form should contain both title and file</h4>
+          </div>
+          <div class="modal-body">
+            <form class="edit-item-form">
+              <button type="button" class="btn btn-default"
+                      data-dismiss="modal">OK</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="form-data-error-modal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"
+                    aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">Please upload a png, doc or pdf file</h4>
+          </div>
+          <div class="modal-body">
+            <form class="edit-item-form">
+              <button type="button" class="btn btn-default"
+                      data-dismiss="modal">OK</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="file-size-error-modal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"
+                    aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">Please upload a file greater than 1 GB</h4>
+          </div>
+          <div class="modal-body">
+            <form class="edit-item-form">
+              <button type="button" class="btn btn-default"
+                      data-dismiss="modal">OK</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="file-upload-success-modal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"
+                    aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">Your file has been uploaded successfully in AWS</h4>
+          </div>
+          <div class="modal-body">
+            <form class="edit-item-form">
+              <button type="button" class="btn btn-default"
+                      data-dismiss="modal">OK</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </body>
 
 </html>
