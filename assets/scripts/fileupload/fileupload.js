@@ -8,6 +8,15 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const handleMultiPartFormdata = function(event) {
   event.preventDefault();
 
+  // get form field data.
+  let formData = getFormFields(this);
+
+  // check if form data has both required fields.
+  if(!formData.image.file || !formData.image.title) {
+    $('#form-entry-error-modal').modal('show');
+    return;
+  }
+
   let input = document.getElementById('myFile');
 
   // check for filesize
@@ -16,15 +25,6 @@ const handleMultiPartFormdata = function(event) {
   // if filesize is less than 1 GB, error and return
   if(fileSize < 1) {
     $('#file-size-error-modal').modal('show');
-    return;
-  }
-
-  // get form field data.
-  let formData = getFormFields(this);
-
-  // check if form data has both required fields.
-  if(!formData.image.file || !formData.image.title) {
-    $('#form-entry-error-modal').modal('show');
     return;
   }
 
