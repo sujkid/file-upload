@@ -23,10 +23,10 @@ const handleMultiPartFormdata = function(event) {
   let fileSize = input.files[0].size/1024/1024/1024;
 
   // if filesize is less than 1 GB, error and return
-  if(fileSize < 1) {
-    $('#file-size-error-modal').modal('show');
-    return;
-  }
+  // if(fileSize < 1) {
+  //   $('#file-size-error-modal').modal('show');
+  //   return;
+  // }
 
   // check to see if the uploaded file is of pdf, doc or png type
   let filename = formData.image.file.toLowerCase();
