@@ -23,10 +23,10 @@ const handleMultiPartFormdata = function(event) {
   let fileSize = input.files[0].size/1024/1024/1024;
 
   // if filesize is less than 1 GB, error and return
-  // if(fileSize < 1) {
-  //   $('#file-size-error-modal').modal('show');
-  //   return;
-  // }
+  if(fileSize < 1) {
+    $('#file-size-error-modal').modal('show');
+    return;
+  }
 
   // check to see if the uploaded file is of pdf, doc or png type
   let filename = formData.image.file.toLowerCase();
@@ -43,7 +43,7 @@ const handleMultiPartFormdata = function(event) {
   // get data from data
   let data = new FormData(event.target);
 
-  console.log('handleMultiPartFormdata ran, data is ', data);
+  // console.log('handleMultiPartFormdata ran, data is ', data);
   // api call to upload file to aws
   api.uploadFile(data)
     .then(ui.onUploadFileSuccess)

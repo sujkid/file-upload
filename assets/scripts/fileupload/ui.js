@@ -5,7 +5,7 @@ const onUploadFileSuccess = (data) => {
 };
 
 const onUploadFileFailure = (error) => {
-  console.log(error);
+  // console.log(error);
 };
 
 module.exports = {
